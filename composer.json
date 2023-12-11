@@ -31,11 +31,28 @@
         "phpstan/phpstan": "^1.9",
         "squizlabs/php_codesniffer": "^3.7"
     },
+    "autoload": {
+        "psr-4": {
+            "GrumPHP\\CustomTask\\Trufflehog\\": "tasks"
+        }
+    },
     "config": {
         "allow-plugins": {
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "ergebnis/composer-normalize": true,
             "phpro/grumphp": true
         }
-    }
+    },
+    "install-trufflehog": [
+        "chmod +x scripts/install_trufflehog.sh",
+        "bash scripts/install_trufflehog.sh"
+    ],
+    "post-install-cmd": [
+        "@install-trufflehog",
+        "composer dump-autoload"
+    ],
+    "post-update-cmd": [
+        "@install-trufflehog",
+        "composer dump-autoload"
+    ]
 }
