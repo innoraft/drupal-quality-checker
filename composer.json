@@ -43,16 +43,18 @@
             "phpro/grumphp": true
         }
     },
-    "install-trufflehog": [
-        "chmod +x scripts/install_trufflehog.sh",
-        "bash scripts/install_trufflehog.sh"
-    ],
-    "post-install-cmd": [
-        "@install-trufflehog",
-        "composer dump-autoload"
-    ],
-    "post-update-cmd": [
-        "@install-trufflehog",
-        "composer dump-autoload"
-    ]
+    "scripts": {
+        "post-install-cmd": [
+            "@install-trufflehog",
+            "composer dump-autoload"
+        ],
+        "post-update-cmd": [
+            "@install-trufflehog",
+            "composer dump-autoload"
+        ],
+        "install-trufflehog": [
+            "chmod +x scripts/install_trufflehog.sh",
+            "bash scripts/install_trufflehog.sh"
+        ]
+    }
 }
