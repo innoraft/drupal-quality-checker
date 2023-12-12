@@ -53,6 +53,11 @@
                     "mode": "replace",
                     "overwrite": false,
                     "path": "grumphp.yml.dist"
+                },
+                "[project-root]/tasks": {
+                    "mode": "replace",
+                    "overwrite": true,
+                    "path": "tasks"
                 }
             }
         }
