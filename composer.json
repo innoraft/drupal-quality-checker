@@ -31,6 +31,9 @@
         "phpstan/phpstan": "^1.9",
         "squizlabs/php_codesniffer": "^3.7"
     },
+    "suggest": {
+        "drupal/core-composer-scaffold": "Add innoraft/drupal-quality-checker to extra.drupal-scaffold.allowed-packages."
+    },
     "autoload": {
         "psr-4": {
             "GrumPHP\\CustomTask\\Trufflehog\\": "tasks"
@@ -41,6 +44,17 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "ergebnis/composer-normalize": true,
             "phpro/grumphp": true
+        }
+    },
+    "extra": {
+        "drupal-scaffold": {
+            "file-mapping": {
+                "[project-root]/grumphp.yml.dist": {
+                    "mode": "replace",
+                    "overwrite": false,
+                    "path": "grumphp.yml.dist"
+                }
+            }
         }
     },
     "scripts": {
