@@ -81,7 +81,7 @@ Long list of additional checks/validators available [here](https://github.com/ph
     ```bash
     "autoload": {
         "psr-4": {
-            "GrumPHP\\CustomTask\\Trufflehog\\": "tasks"
+            "Innoraft\\QualityChecker\\Trufflehog\\": "tasks"
         }
     },
     ```
