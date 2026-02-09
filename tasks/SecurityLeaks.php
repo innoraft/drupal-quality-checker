@@ -6,6 +6,7 @@ namespace Innoraft\QualityChecker\Trufflehog;
 
 use GrumPHP\Runner\TaskResult;
 use GrumPHP\Runner\TaskResultInterface;
+use GrumPHP\Task\Config\ConfigOptionsResolver;
 use GrumPHP\Task\Context\GitPreCommitContext;
 use GrumPHP\Task\Context\RunContext;
 use GrumPHP\Task\Context\ContextInterface;
@@ -20,7 +21,7 @@ class SecurityLeaks extends AbstractExternalTask {
   /**
    * {@inheritdoc}
    */
-  public static function getConfigurableOptions(): OptionsResolver {
+  public static function getConfigurableOptions(): ConfigOptionsResolver {
     $resolver = new OptionsResolver();
     $resolver->setDefaults([
       'command' => '',
@@ -28,7 +29,7 @@ class SecurityLeaks extends AbstractExternalTask {
 
     $resolver->addAllowedTypes('command', ['string']);
 
-    return $resolver;
+    return ConfigOptionsResolver::fromOptionsResolver($resolver);
   }
 
   /**
